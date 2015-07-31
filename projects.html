@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Justin Stone</title>
+    <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" rel="stylesheet" type="text/css">
+    <link href="resources/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="resources/css/projects.min.css">
+  </head>
+  <body>
+    <div id="container">
+      <div id="nav-bar"><a href="index.html" class="nav-link">Index</a><a href="projects.html" class="nav-link">Projects</a><a href="contact.html" class="nav-link">Contact</a></div>
+      <div id="content">
+        <h1>Projects</h1>
+        <p>Click on a project title or image to view the end result.</p>
+        <section id="projects">
+          <div class="project">
+            <h1 class="project-title"><a href="http://obscure-meadow-6240.herokuapp.com/" class="project-link">Nightlife Management App</a></h1>
+            <h4 class="project-prompt">
+              In this project a "nightlife-coordination" app was reverse engineered. Check out the details
+              of the prompt <a href="http://www.freecodecamp.com/challenges/basejump-build-a-nightlife-coordination-app">here.</a>
+            </h4><a href="http://obscure-meadow-6240.herokuapp.com/" class="project-image-link"><img src="resources/img/project-images/nightlife.jpg" class="project-image"></a><a href="https://github.com/Ntropish/oak-smoke-nightlife" class="source-link">
+              <h3>View the source here.</h3></a>
+            <p class="project-summary">
+              <p>
+                This app shows any user the bars nearby based on HTML5 geolocation
+                and the number of authenticated users saying they will attend each venue.
+                Authenticated users get an additional button next to each bar allowing them to
+                indicate to the app that they will be attending.
+              </p>
+            </p>
+            <div class="objectives">
+              <h2>Objectives</h2>
+              <p>
+                The primary purpose for this project was to refine back-end skills learned in the previous project and to
+                add a few new pieces of technology to my skill set.
+              </p>
+            </div>
+            <div class="learned">
+              <ul>
+                <li>
+                  <p>
+                    Based on my observations from the last project, the voting app, I made sure to
+                    thoroughly separate the client and server sides of the application. The initial
+                    api was developed entirely before any client side work was done.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Encryption to protect passwords in the database with Bcrypt was added. So a new technology
+                    was learned. But more importantly, because of encryption's asynchronous nature, I
+                    found the need to abandon "console.log()" debugging almost entirely because it ends
+                    up being ineffective. Debuggers really aren't that complicated and it only took the
+                    reading of an article or two to get into them correctly. No longer will I look over
+                    my shoulder as I type multitudes of print statements while hoping nobody is watching.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Another thing learned from adding encryption is that levels of callbacks can pile up fast.
+                    Encryption was just another of those levels which happened to hit the tipping point
+                    of making code difficult to reason about. Any further nesting of callbacks would
+                    have warranted a refactor. So, I have been reading up on some asynchronous libraries
+                    and look forward to using async.js in the future.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    This was also my first project to use angular. As others have said, it was certainly very
+                    easy to start using. There was some difficulty learning that $scope.$apply() had to
+                    surround functions in an ajax call. It felt a little silly doing this because it
+                    creates triply nested functions in ones ajax where only the deepest function has any expressions.
+                    Async.js will end up being very helpful in these situations.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    I ended up needing SASS finally. Previously I avoided any libraries that were just crutches
+                    for myself as a new developer. But this time I had a situation where I was using one
+                    base color and many slight variations in shade and tint for making elements look like
+                    buttons and tabs or just making the page feel "active" with different styling on mouseovers.
+                    I knew that if I ever wanted to change the base color all of these color variations would
+                    have to be remade and switched out in all of their varying locations. So before I got too
+                    far into styling I switched everything out for SASS. Now using variables and SASS's
+                    lighten() and darken() I can change the entire color scheme by modifying a single variable.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Using SASS effectively really requires a task runner. Now I use gulp. Since I'm using gulp now
+                    I also minify and uglify all of my resources which should add efficiency and speed to
+                    deployed apps once I make something large, or just long, enough for that to matter.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    With this new structure I saw how testing could be done much easier and so
+                    some experimentation was done with Mocha. However, I had trouble getting the tests
+                    to work because I didn't know if I had set up mocha incorrectly or if it was my api.
+                    Unfortunately I ended up making a manual testing page with all the user forms in one
+                    spot. But, I did get Mocha working before the end of the project and the one test I
+                    did write caught an obvious bug right away. So maybe my lack of testing so far has been
+                    a weakness, but I have a reference now that I wrote myself and can look back on for
+                    getting testing working at the start of projects in the future.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="weaknesses">
+              <h2>Weaknesses</h2>
+              <ul>
+                <li>
+                  <p>
+                    This project could have been improved by putting more effort into planning.
+                    The layout of the page is fairly simple so I thought it would be fine
+                    to do the styling out of a vague idea I had in my head for what I wanted.
+                    But, ultimately I was unhappy with the way the design turned out and a mock-up
+                    or two could have fixed that.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Another thing planning could have accomplished is a cleaner api.
+                    If I would have known that any successful POST to register a new user would
+                    result in an immediate POST to login then I could have provided an option
+                    to do both at once. After getting everything working in the client side
+                    and server side I went back to add encryption to the database. This additional
+                    async code in the register function doesn't allow users to immediately login.
+                    Looking back at the code now I see exactly what I would have to do to fix this.
+                    However, at the time I was struggling to get my first deployment to Heroku working
+                    and quickly changed my Angular code to direct the user to log in after registering
+                    for a delay at the cost of convenience to the user. Definitely a weakness.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="project">
+            <h1 class="project-title"><a href="#" class="project-link">Voting App</a></h1>
+            <h4 class="project-prompt">The goal of this project was to build an app that reverse engineered <a href="http://voteplex.herokuapp.com/">this other poll application.</a> This was an assignment from FreeCodeCamp and the details can be found <a href="http://www.freecodecamp.com/challenges/basejump-build-a-voting-app">here.</a></h4><a href="" class="project-image-link"><img src=""></a><a href="https://github.com/Ntropish/stale-vote" class="source-link">
+              <h3>View my GitHub repo here.</h3></a>
+            <p class="project-summary">
+              This app let's a user login to create and vote on polls.
+              Any user can visit the page of a user with an account to view their polls
+              but must login to vote or create their own.
+            </p>
+            <div class="objectives">
+              <h2>Objectives</h2>
+              <p>The primary objective of this project was to serve as an introduction to back-end development</p>
+              <h4>Technology Learned</h4>
+              <ul>
+                <li>
+                  <h5>Express</h5>
+                  <p>
+                    This was my first time using Express, a web framework for Node.js. Like most things in javascript,
+                    Express is very open and unopinionated which exposes what is happening to its user at a very deep level.
+                    Even though this philosophy tends to cause steeper learning curves, I'm very happy that I worked through
+                    it and can understand why Express is one of the most popular Node.js frameworks.
+                  </p>
+                </li>
+                <li>
+                  <h5>MongoDB</h5>
+                  <p>
+                    In this project I used Mongoose along with MongoDB for my data storage . These two pieces
+                    of software made it extremely simple to create a schema and just use it. Other than ease of use, using
+                    these two caused me to become familiar with the error first callback design pattern and async
+                    programming in general.
+                  </p>
+                </li>
+                <li>
+                  <h5>Authentication and Authorization</h5>
+                  <p>
+                    User handling was done with Passport and Express-Sessions.
+                    It may have actually been easier to just roll my own authentication as Passport seemed to hide
+                    the inner workings of authentication. However, I'm writing this from the future where I have worked with
+                    it more. I now know that it is really just an authentication time saver and allows for multiple
+                    authentication strategies without causing the mess that one would create on their own. Express-Sessions
+                    is just a middleware that stays out of the way while letting one access user data from any request,
+                    very useful.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="weaknesses">
+              <h2>Weaknesses</h2>
+              <p>
+                This app was structured very poorly and I really disliked working in it after realizing
+                everything I had done wrong. It was my first time working with Jade templates and decided it
+                might be a good idea to have route handlers render out html with poll and user data already in them
+                using my new templating powers. This caused problems when I wanted to make the client side dynamic
+                and resulted in much DOM wrangling. I finished this one up quickly and did almost no styling on it,
+                wanting to get away from the mess and hoping to use my new Express skills for good in the future.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="resources/uglyjs/projects.min.js"></script>
+  </body>
+</html>

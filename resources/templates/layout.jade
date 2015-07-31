@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title Justin Stone
+        link(href='http://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css')
+        link(href='resources/css/style.min.css', rel='stylesheet')
+        block styles
+    body
+
+        div#container
+            div#nav-bar
+                a(class="nav-link" href="index.html") Index
+                a(class="nav-link" href="projects.html") Projects
+                a(class="nav-link" href="contact.html") Contact
+
+            block content
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js' )
+        block scripts
+

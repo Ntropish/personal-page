@@ -1,0 +1,17 @@
+extends layout
+block content
+    div#content
+        h1 Projects
+        p Click on a project title or image to view the end result.
+        section#projects
+            div.project
+                include ../project-templates/nightlife.jade
+            div.project
+                include ../project-templates/vote.jade
+
+
+block scripts
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js")
+    script(src="resources/uglyjs/projects.min.js")
+block styles
+    link(rel="stylesheet" href="resources/css/projects.min.css")

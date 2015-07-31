@@ -1,0 +1,88 @@
+h1.project-title
+    a.project-link(href="http://obscure-meadow-6240.herokuapp.com/") Nightlife Management App
+h4.project-prompt
+    | In this project a "nightlife-coordination" app was reverse engineered. Check out the details
+    | of the prompt#{' '}
+    a(href="http://www.freecodecamp.com/challenges/basejump-build-a-nightlife-coordination-app") here.
+a.project-image-link(href="http://obscure-meadow-6240.herokuapp.com/")
+    img.project-image(src="resources/img/project-images/nightlife.jpg")
+a.source-link(href="https://github.com/Ntropish/oak-smoke-nightlife")
+    h3 View the source here.
+p.project-summary
+    p This app shows any user the bars nearby based on HTML5 geolocation
+        | and the number of authenticated users saying they will attend each venue.
+        | Authenticated users get an additional button next to each bar allowing them to
+        | indicate to the app that they will be attending.
+div.objectives
+    h2 Objectives
+    p The primary purpose for this project was to refine back-end skills learned in the previous project and to
+        | add a few new pieces of technology to my skill set.
+div.learned
+    ul
+        li
+            p Based on my observations from the last project, the voting app, I made sure to
+                | thoroughly separate the client and server sides of the application. The initial
+                | api was developed entirely before any client side work was done.
+        li
+            p Encryption to protect passwords in the database with Bcrypt was added. So a new technology
+                | was learned. But more importantly, because of encryption's asynchronous nature, I
+                | found the need to abandon "console.log()" debugging almost entirely because it ends
+                | up being ineffective. Debuggers really aren't that complicated and it only took the
+                | reading of an article or two to get into them correctly. No longer will I look over
+                | my shoulder as I type multitudes of print statements while hoping nobody is watching.
+        li
+            p Another thing learned from adding encryption is that levels of callbacks can pile up fast.
+                | Encryption was just another of those levels which happened to hit the tipping point
+                | of making code difficult to reason about. Any further nesting of callbacks would
+                | have warranted a refactor. So, I have been reading up on some asynchronous libraries
+                | and look forward to using async.js in the future.
+        li
+            p This was also my first project to use angular. As others have said, it was certainly very
+                | easy to start using. There was some difficulty learning that $scope.$apply() had to
+                | surround functions in an ajax call. It felt a little silly doing this because it
+                | creates triply nested functions in ones ajax where only the deepest function has any expressions.
+                | Async.js will end up being very helpful in these situations.
+        li
+            p I ended up needing SASS finally. Previously I avoided any libraries that were just crutches
+                | for myself as a new developer. But this time I had a situation where I was using one
+                | base color and many slight variations in shade and tint for making elements look like
+                | buttons and tabs or just making the page feel "active" with different styling on mouseovers.
+                | I knew that if I ever wanted to change the base color all of these color variations would
+                | have to be remade and switched out in all of their varying locations. So before I got too
+                | far into styling I switched everything out for SASS. Now using variables and SASS's
+                | lighten() and darken() I can change the entire color scheme by modifying a single variable.
+        li
+            p Using SASS effectively really requires a task runner. Now I use gulp. Since I'm using gulp now
+                | I also minify and uglify all of my resources which should add efficiency and speed to
+                | deployed apps once I make something large, or just long, enough for that to matter.
+        li
+            p With this new structure I saw how testing could be done much easier and so
+                | some experimentation was done with Mocha. However, I had trouble getting the tests
+                | to work because I didn't know if I had set up mocha incorrectly or if it was my api.
+                | Unfortunately I ended up making a manual testing page with all the user forms in one
+                | spot. But, I did get Mocha working before the end of the project and the one test I
+                | did write caught an obvious bug right away. So maybe my lack of testing so far has been
+                | a weakness, but I have a reference now that I wrote myself and can look back on for
+                | getting testing working at the start of projects in the future.
+
+
+div.weaknesses
+    h2 Weaknesses
+    ul
+        li
+            p This project could have been improved by putting more effort into planning.
+                | The layout of the page is fairly simple so I thought it would be fine
+                | to do the styling out of a vague idea I had in my head for what I wanted.
+                | But, ultimately I was unhappy with the way the design turned out and a mock-up
+                | or two could have fixed that.
+        li
+            p Another thing planning could have accomplished is a cleaner api.
+                | If I would have known that any successful POST to register a new user would
+                | result in an immediate POST to login then I could have provided an option
+                | to do both at once. After getting everything working in the client side
+                | and server side I went back to add encryption to the database. This additional
+                | async code in the register function doesn't allow users to immediately login.
+                | Looking back at the code now I see exactly what I would have to do to fix this.
+                | However, at the time I was struggling to get my first deployment to Heroku working
+                | and quickly changed my Angular code to direct the user to log in after registering
+                | for a delay at the cost of convenience to the user. Definitely a weakness.
