@@ -2,4 +2,5 @@ body {
   background-color: #f7fafa; }
 
 .project-image {
-  width: 100%; }
+  width: 100%;
+  max-width: 25em; }
