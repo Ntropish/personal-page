@@ -1,0 +1,44 @@
+h1.project-title
+    a.project-link(href="http://ntropish.github.io/LocalWeatherLookup/") Weather Lookup Page
+h4.project-prompt Check out the project prompt#{' '}
+    a(href="http://www.freecodecamp.com/challenges/zipline-show-the-local-weather") here.
+a.project-image-link(href="http://ntropish.github.io/LocalWeatherLookup/")
+    img(src="")
+a.source-link(href="https://github.com/Ntropish/LocalWeatherLookup")
+    p View my GitHub repo here.
+p.project-summary
+    | The purpose of this project was to create a front-end application that
+    | would use an api and geolocation to check the local weather. The images
+    | used on the page change based on the temperature and sky conditions.
+div.objectives
+    h2 Objectives
+    p This project was intended to serve as an introduction to geolocation and public
+        | APIs. I didn't spend enough time on this project or put in enough effort so
+        | check out the weaknesses section for things learned!
+div.weaknesses
+    h2 Weaknesses
+    p This project was added just as I was about to finish the last front-end
+        | challenge in the set at FreeCodeCamp. This was supposed to be one of the first
+        | an FCC user would complete but I was almost ready to move on to full-stack.
+        | Because of this I rushed through it and did some things wrongly
+        | without realizing it. Thankfully, by doing this writeup I can identify
+        | those things and still learn from a project I didn't put enough effort into.
+        ul
+            li
+                p First of all, I wasn't sure what all of the possible forecast description
+                    | phrases were so I didn't implement all of the possible sky images. Now
+                    | looking back I realize I can just go check the API documentation and see
+                    | every possibility. A lesson in checking the docs!
+            li
+                p Second, I used Imgur for image hosting. After reading their TOS
+                    | I can see that they aren't okay with this. I'll have to go back
+                    | and fix that if I want to keep the page deployed.
+            li
+                p The last major thing that sticks out is the way I vertically aligned
+                    | that div in the center of the screen. It was supposed to cover the
+                    | seam between the two background images but my poor CSS skills
+                    | made it aligned too high up on large monitors. I did a top: 30%
+                    | thinking it would approximately center it and be good enough.
+                    | This approach isn't really acceptable if the aim is to work well
+                    | on all devices. I should have looked for a better way (like
+                    | top: calc(50% - 5em) ).
