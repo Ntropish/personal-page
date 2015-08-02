@@ -4,7 +4,8 @@
  */
 * {
   font-family: 'Oxygen', sans-serif;
-  color: #0d1f2d; }
+  color: #0d1f2d;
+  line-height: 2em; }
 
 html {
   width: 100%;
@@ -16,8 +17,7 @@ body {
   height: 100%; }
 
 #content {
-  padding: 1em;
-  background-color: #f7fafa; }
+  padding: 1em; }
 
 .nav-link {
   color: #0d1f2d;

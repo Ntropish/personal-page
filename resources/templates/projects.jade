@@ -2,6 +2,20 @@ extends layout
 block content
     div#content
         h1 Projects
+        p
+            | I've worked in three stages for the past eight weeks. The first was to learn the basics.
+            | This involved reading most of JavaScript: The Definitive Guide and completing the study
+            | guide found&#32;
+            a(href="http://javascriptissexy.com/how-to-learn-javascript-properly/") here.
+            | &#32;The next two portions were working through the exercises on&#32;
+            a(href="http://www.freecodecamp.com/") FreeCodeCamp.
+            | &#32;Here, in the second part of my journey, I was directed all the way through being
+            | able to create front end applications confidently and without guidance.
+            | For the last stage, the full stack projects, I'm currently working through the last few exercises
+            | on FreeCodeCamp. I have less direction than I had just starting out and am
+            | having to become more active on Twitter, subscribe to many mailing lists, read blogs,
+            | and take part in the web development community in order to learn and develop myself further.
+            | It's much more difficult this way, but also much more fun.
         p Use the project directory to view a project.
         div#index-app(ng-app="index" ng-controller="IndexCtrl as controller")
             script(type="text/ng-template" id="project-map")
