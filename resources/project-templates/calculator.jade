@@ -1,28 +1,33 @@
-h1.project-title
-    a.project-link(href="http://ntropish.github.io/Calculator/") JavaScript Calculator
-h4.project-prompt Check out the prompt for the project#{' '}
-    a(href="http://www.freecodecamp.com/challenges/zipline-build-a-javascript-calculator") here.
-a.project-image-link(href="http://ntropish.github.io/Calculator/")
-    img.project-image(src="resources/img/project-images/calculator.jpg")
-a.source-link(href="https://github.com/Ntropish/Calculator")
-    h3 View the GitHub repo here
-p.project-summary
-    p The aim of this project was to build a simple calculator in JavaScript.
-div.objectives
-    h2 Objectives
-    p The goal here was to focus on writing good JavaScript and not to have to think about
-        | new technology. This was certainly accomplished. The implementation was very straightforward
-        | and I was really surprised that it just worked right away once I had finished. I used the
-        | concept of registers (thanks, EE education) to remember inputs the way an actual calculator
-        | would and wrote operator functions before I even started looking at how they would apply to
-        | the view. The view and controller sides were made independently, hooked up, and everything
-        | just worked.
-div.weaknesses
-    h2 Weaknesses
-    p As I was working on this project I noticed I was repeating myself a bit too much when
-        | applying event handlers to calculator buttons. I decided that I would make that trade-off
-        | because the project was so short, sacrificing long term efficiency for getting it done quickly.
-        | Looking back now I can see an easy way too combine the 0-9 input buttons which would
-        | have kept this program DRY. If I would have pursued the DRY option I would have
-        | learned more about JQuery sooner even though it might have taken longer to complete the project.
-        | I think the lesson here is to not make trade-offs in the quality of code when you are trying to learn.
+doctype html
+html
+    head
+        title Justin Stone
+    body
+        h1.project-title
+            a.project-link(href="http://ntropish.github.io/Calculator/") JavaScript Calculator
+        h4.project-prompt Check out the prompt for the project#{' '}
+            a(href="http://www.freecodecamp.com/challenges/zipline-build-a-javascript-calculator") here.
+        a.project-image-link(href="http://ntropish.github.io/Calculator/")
+            img.project-image(src="resources/img/project-images/calculator.jpg")
+        a.source-link(href="https://github.com/Ntropish/Calculator")
+            h3 View the GitHub repo here
+        p.project-summary
+            p The aim of this project was to build a simple calculator in JavaScript.
+        div.objectives
+            h2 Objectives
+            p The goal here was to focus on writing good JavaScript and not to have to think about
+                | new technology. This was certainly accomplished. The implementation was very straightforward
+                | and I was really surprised that it just worked right away once I had finished. I used the
+                | concept of registers (thanks, EE education) to remember inputs the way an actual calculator
+                | would and wrote operator functions before I even started looking at how they would apply to
+                | the view. The view and controller sides were made independently, hooked up, and everything
+                | just worked.
+        div.weaknesses
+            h2 Weaknesses
+            p As I was working on this project I noticed I was repeating myself a bit too much when
+                | applying event handlers to calculator buttons. I decided that I would make that trade-off
+                | because the project was so short, sacrificing long term efficiency for getting it done quickly.
+                | Looking back now I can see an easy way too combine the 0-9 input buttons which would
+                | have kept this program DRY. If I would have pursued the DRY option I would have
+                | learned more about JQuery sooner even though it might have taken longer to complete the project.
+                | I think the lesson here is to not make trade-offs in the quality of code when you are trying to learn.

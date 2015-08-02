@@ -1,6 +1,13 @@
 body {
   background-color: #f7fafa; }
 
+button {
+  width: 100%;
+  text-align: left; }
+
 .project-image {
   width: 100%;
+  max-width: 25em; }
+
+#index-app {
   max-width: 25em; }

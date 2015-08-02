@@ -1,0 +1,57 @@
+
+<h1 class="project-title"><a href="#" class="project-link">Voting App</a></h1>
+<h4 class="project-prompt">The goal of this project was to build an app that reverse engineered <a href="http://voteplex.herokuapp.com/">this other poll application.</a> This was an assignment from FreeCodeCamp and the details can be found <a href="http://www.freecodecamp.com/challenges/basejump-build-a-voting-app">here.</a></h4><a href="" class="project-image-link"><img src="" class="project-image"/></a><a href="https://github.com/Ntropish/stale-vote" class="source-link">
+  <p>View my GitHub repo here.</p></a>
+<p class="project-summary">
+  This app let's a user login to create and vote on polls.
+  Any user can visit the page of a user with an account to view their polls
+  but must login to vote or create their own.
+</p>
+<div class="objectives">
+  <h2>Objectives</h2>
+  <p>The primary objective of this project was to serve as an introduction to back-end development</p>
+  <h4>Technology Learned</h4>
+  <ul>
+    <li>
+      <h5>Express</h5>
+      <p>
+        This was my first time using Express, a web framework for Node.js. Like most things in javascript,
+        Express is very open and unopinionated which exposes what is happening to its user at a very deep level.
+        Even though this philosophy tends to cause steeper learning curves, I'm very happy that I worked through
+        it and can understand why Express is one of the most popular Node.js frameworks.
+      </p>
+    </li>
+    <li>
+      <h5>MongoDB</h5>
+      <p>
+        In this project I used Mongoose along with MongoDB for my data storage . These two pieces
+        of software made it extremely simple to create a schema and just use it. Other than ease of use, using
+        these two caused me to become familiar with the error first callback design pattern and async
+        programming in general.
+      </p>
+    </li>
+    <li>
+      <h5>Authentication and Authorization</h5>
+      <p>
+        User handling was done with Passport and Express-Sessions.
+        It may have actually been easier to just roll my own authentication as Passport seemed to hide
+        the inner workings of authentication. However, I'm writing this from the future where I have worked with
+        it more. I now know that it is really just an authentication time saver and allows for multiple
+        authentication strategies without causing the mess that one would create on their own. Express-Sessions
+        is just a middleware that stays out of the way while letting one access user data from any request,
+        very useful.
+      </p>
+    </li>
+  </ul>
+</div>
+<div class="weaknesses">
+  <h2>Weaknesses</h2>
+  <p>
+    This app was structured very poorly and I really disliked working in it after realizing
+    everything I had done wrong. It was my first time working with Jade templates and decided it
+    might be a good idea to have route handlers render out html with poll and user data already in them
+    using my new templating powers. This caused problems when I wanted to make the client side dynamic
+    and resulted in much DOM wrangling. I finished this one up quickly and did almost no styling on it,
+    wanting to get away from the mess and hoping to use my new Express skills for good in the future.
+  </p>
+</div>

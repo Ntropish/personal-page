@@ -1,24 +1,24 @@
 extends layout
 block content
+
+
+
+
     div#content
         h1 Projects
         p Click on a project title or image to view the end result.
-        section#projects
-            div.project
-                include ../project-templates/nightlife.jade
-            div.project
-                include ../project-templates/vote.jade
-            div.project
-                include ../project-templates/weather.jade
-            div.project
-                include ../project-templates/calculator.jade
-            div.project
-                include ../project-templates/tictactoe.jade
-            div.project
-                include ../project-templates/pomodoro.jade
+        div#index-app(ng-app="index" ng-controller="IndexCtrl as controller")
+            script(type="text/ng-template" id="project-map")
+                button.directory-button(ng-click="dir.open = !dir.open") {{ dir.dirName }}
+                ul(ng-if="dir.projects.length + dir.dirs.length > 0 ")
+                    li(ng-if="dir.open" ng-repeat="project in dir.projects")
+                        button.project-button(ng-click="loadProject(project.link)") {{project.title}}
+                    li(ng-repeat="dir in dir.dirs" ng-include="'project-map'")
+            div#root(ng-repeat="dir in projectMap.dirs" ng-include="'project-map'")
+        div.project-display
 
 block scripts
     script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js")
-    script(src="resources/uglyjs/projects.min.js")
+    script(src="resources/javascripts/projects.js")
 block styles
-    link(rel="stylesheet" href="resources/css/projects.min.css")
+    link(href="resources/css/projects.min.css" rel="stylesheet" )
