@@ -6,7 +6,37 @@ $color5: rgba(247, 250, 250, 1)
 
 $color-shadow: rgba( 0, 0, 0, 1)
 $color-white: rgba( 255, 255, 255, 1)
+$color-light-grey: rgba(220, 220, 220, 1)
 
+@media screen and (min-width: 35em)
+  #content
+    &>h1
+      text-align: center
+    &>p
+      margin-left: auto
+      margin-right: auto
+  #index-app
+    margin-left: auto
+    margin-right: auto
+  .project-display
+    margin-left: auto
+    margin-right: auto
+    &>.project-title
+      text-align: center
+    &>.project-prompt
+      text-align: center
+    &>.project-image-link
+      display: block
+      margin-left: auto
+      margin-right: auto
+      &>.project-image
+        border: solid 1px $color-light-grey
+
+@media screen and (min-width: 75em)
+  #index-app
+    position: absolute
+    top: 8em
+    left: 2%
 
 button
   width: 100%
@@ -16,12 +46,16 @@ ul
   list-style: none
   padding-left: 1em
 
+.project-display
+  border-top: solid 1px $color-light-grey
+  max-width: 35em
+
 .project-image
   width: 100%
   max-width: 25em
 
 #index-app
-  max-width: 25em
+  max-width: 20em
 
 .index-button
   border: 0
@@ -31,7 +65,7 @@ ul
     outline: 0
 
 .directory-button
-  font-size: 1.3em
+  font-size: 1.1em
   background-color: $color2
   color: $color-white
   &>.fa
@@ -39,9 +73,14 @@ ul
 
 
 .project-button
-  font-size: 1.2em
+  font-size: 1em
   background-color: $color-white
 
 .project-image-link
   width: 100%
   max-width: 20em
+
+#content
+  position: relative
+  &>p
+    max-width: 35em

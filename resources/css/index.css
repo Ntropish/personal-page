@@ -9,6 +9,9 @@
     width: 45%;
     margin-left: 1em;
     float: left; }
+  #social-links {
+    width: 45%;
+    margin-left: 1em; }
   #picture-of-me {
     float: right;
     margin-right: 5%; }
@@ -21,6 +24,10 @@
 
 @media screen and (min-width: 45em) {
   #my-title {
+    margin-left: auto;
+    margin-right: auto;
+    float: none; }
+  #social-links {
     margin-left: auto;
     margin-right: auto;
     float: none; }
@@ -41,6 +48,7 @@ ul {
   display: none; }
 
 #intro {
+  border-bottom: solid 1px gainsboro;
   position: relative;
   text-align: center; }
   #intro > p {
@@ -64,3 +72,6 @@ ul {
 
 .tech-section {
   width: 50%; }
+
+#social-links > a {
+  font-size: 3em; }

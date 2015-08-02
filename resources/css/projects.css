@@ -1,3 +1,32 @@
+@media screen and (min-width: 35em) {
+  #content > h1 {
+    text-align: center; }
+  #content > p {
+    margin-left: auto;
+    margin-right: auto; }
+  #index-app {
+    margin-left: auto;
+    margin-right: auto; }
+  .project-display {
+    margin-left: auto;
+    margin-right: auto; }
+    .project-display > .project-title {
+      text-align: center; }
+    .project-display > .project-prompt {
+      text-align: center; }
+    .project-display > .project-image-link {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
+      .project-display > .project-image-link > .project-image {
+        border: solid 1px gainsboro; } }
+
+@media screen and (min-width: 75em) {
+  #index-app {
+    position: absolute;
+    top: 8em;
+    left: 2%; } }
+
 button {
   width: 100%;
   text-align: left; }
@@ -6,12 +35,16 @@ ul {
   list-style: none;
   padding-left: 1em; }
 
+.project-display {
+  border-top: solid 1px gainsboro;
+  max-width: 35em; }
+
 .project-image {
   width: 100%;
   max-width: 25em; }
 
 #index-app {
-  max-width: 25em; }
+  max-width: 20em; }
 
 .index-button {
   border: 0;
@@ -20,16 +53,21 @@ ul {
     outline: 0; }
 
 .directory-button {
-  font-size: 1.3em;
+  font-size: 1.1em;
   background-color: #0d1f2d;
   color: white; }
   .directory-button > .fa {
     color: white; }
 
 .project-button {
-  font-size: 1.2em;
+  font-size: 1em;
   background-color: white; }
 
 .project-image-link {
   width: 100%;
   max-width: 20em; }
+
+#content {
+  position: relative; }
+  #content > p {
+    max-width: 35em; }
