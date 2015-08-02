@@ -7,8 +7,6 @@ $color5: rgba(247, 250, 250, 1)
 $color-shadow: rgba( 0, 0, 0, 1)
 $color-white: rgba( 255, 255, 255, 1)
 
-body
-  background-color: #f7fafa
 
 button
   width: 100%
@@ -16,6 +14,7 @@ button
 
 ul
   list-style: none
+  padding-left: 1em
 
 .project-image
   width: 100%
@@ -32,11 +31,15 @@ ul
     outline: 0
 
 .directory-button
+  font-size: 1.3em
   background-color: $color2
   color: $color-white
+  &>.fa
+    color: $color-white
 
 
 .project-button
+  font-size: 1.2em
   background-color: $color-white
 
 .project-image-link

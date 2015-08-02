@@ -4,45 +4,71 @@
       "open": true,
       "dirName": "Projects",
       "projects": [
-        {
-          "title": "Personal Website",
-          "link": "resources/html/projects/personal.html"
-        }
+
       ],
       "dirs": [
         {
-          "open": false,
+          "open": true,
           "dirName": "Beginner Projects",
-          "projects": [],
+          "projects": [
+            {
+              "title": "Personal Website",
+              "link": "resources/html/projects/personal.html"
+            }
+          ],
           "dirs": [
             {
-              "open": false,
-              "dirName": "Full-Stack",
+              "open": true,
+              "dirName": "FreeCodeCamp",
               "projects": [],
-              "dirs": {}
-            },
-            {
-              "open": false,
-              "dirName": "Front-End",
-              "projects": [
+              "dirs": [
                 {
-                  "title": "TicTacToe Game",
-                  "link": "resources/html/projects/tictactoe.html"
+                  "open": true,
+                  "dirName": "Full-Stack",
+                  "projects": [
+                    {
+                      "title": "Nightlife Coordination App",
+                      "link": "resources/html/projects/nightlife.html"
+                    },
+                    {
+                      "title": "Voting App",
+                      "link": "resources/html/projects/vote.html"
+                    }
+                  ],
+                  "dirs": {}
                 },
                 {
-                  "title": "JavaScript Calculator",
-                  "link": "resources/html/projects/calculator.html"
-                },
-                {
-                  "title": "Pomodoro Clock",
-                  "link": "resources/html/projects/pomodoro.html"
-                },
-                {
-                  "title": "Wikipedia Search",
-                  "link": "resources/html/projects/wiki-search.html"
+                  "open": true,
+                  "dirName": "Front-End",
+                  "projects": [
+                    {
+                      "title": "TicTacToe Game",
+                      "link": "resources/html/projects/tictactoe.html"
+                    },
+                    {
+                      "title": "JavaScript Calculator",
+                      "link": "resources/html/projects/calculator.html"
+                    },
+                    {
+                      "title": "Pomodoro Clock",
+                      "link": "resources/html/projects/pomodoro.html"
+                    },
+                    {
+                      "title": "Wikipedia Search",
+                      "link": "resources/html/projects/wiki-search.html"
+                    },
+                    {
+                      "title": "FreeCodeCamp News Scraper",
+                      "link": "resources/html/projects/FCCnews.html"
+                    },
+                    {
+                      "title": "Local Weather Page",
+                      "link": "resources/html/projects/weather.html"
+                    }
+                  ],
+                  "dirs": []
                 }
-              ],
-              "dirs": []
+              ]
             }
           ]
         }

@@ -1,12 +1,10 @@
-body {
-  background-color: #f7fafa; }
-
 button {
   width: 100%;
   text-align: left; }
 
 ul {
-  list-style: none; }
+  list-style: none;
+  padding-left: 1em; }
 
 .project-image {
   width: 100%;
@@ -22,10 +20,14 @@ ul {
     outline: 0; }
 
 .directory-button {
+  font-size: 1.3em;
   background-color: #0d1f2d;
   color: white; }
+  .directory-button > .fa {
+    color: white; }
 
 .project-button {
+  font-size: 1.2em;
   background-color: white; }
 
 .project-image-link {

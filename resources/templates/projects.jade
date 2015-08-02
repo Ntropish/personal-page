@@ -2,7 +2,7 @@ extends layout
 block content
     div#content
         h1 Projects
-        p Click on a project title or image to view the end result.
+        p Use the project directory to view a project.
         div#index-app(ng-app="index" ng-controller="IndexCtrl as controller")
             script(type="text/ng-template" id="project-map")
                 button.directory-button(class="index-button" ng-click="dir.open = !dir.open")
