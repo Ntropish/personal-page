@@ -5,9 +5,29 @@ button {
   width: 100%;
   text-align: left; }
 
+ul {
+  list-style: none; }
+
 .project-image {
   width: 100%;
   max-width: 25em; }
 
 #index-app {
   max-width: 25em; }
+
+.index-button {
+  border: 0;
+  border-radius: 1em; }
+  .index-button:focus {
+    outline: 0; }
+
+.directory-button {
+  background-color: #0d1f2d;
+  color: white; }
+
+.project-button {
+  background-color: white; }
+
+.project-image-link {
+  width: 100%;
+  max-width: 20em; }

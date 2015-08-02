@@ -4,6 +4,7 @@
     <title>Justin Stone</title>
     <link href="http://fonts.googleapis.com/css?family=Oxygen:400,700,300" rel="stylesheet" type="text/css">
     <link href="resources/css/style.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="resources/css/projects.min.css" rel="stylesheet">
   </head>
   <body>
@@ -14,12 +15,14 @@
         <p>Click on a project title or image to view the end result.</p>
         <div id="index-app" ng-app="index" ng-controller="IndexCtrl as controller">
           <script type="text/ng-template" id="project-map">
-            <button ng-click="dir.open = !dir.open" class="directory-button">{{ dir.dirName }}</button>
+            <button ng-click="dir.open = !dir.open" class="directory-button index-button"><i ng-class="{'fa-caret-right': !dir.open, 'fa-caret-down': dir.open}" class="fa"></i> {{ dir.dirName }}</button>
             <ul ng-if="dir.projects.length + dir.dirs.length &gt; 0 ">
               <li ng-if="dir.open" ng-repeat="project in dir.projects">
-                <button ng-click="loadProject(project.link)" class="project-button">{{project.title}}</button>
+                <button ng-click="loadProject(project.link)" class="project-button index-button">{{project.title}} <i ng-class="{'fa-hand-o-left': project.link === loaded}" class="fa"></i></button>
               </li>
-              <li ng-repeat="dir in dir.dirs" ng-include="'project-map'"></li>
+              <li ng-show="dir.open">
+                <div ng-repeat="dir in dir.dirs" ng-include="'project-map'"></div>
+              </li>
             </ul>
           </script>
           <div id="root" ng-repeat="dir in projectMap.dirs" ng-include="'project-map'"></div>

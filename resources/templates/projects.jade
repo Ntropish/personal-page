@@ -1,19 +1,20 @@
 extends layout
 block content
-
-
-
-
     div#content
         h1 Projects
         p Click on a project title or image to view the end result.
         div#index-app(ng-app="index" ng-controller="IndexCtrl as controller")
             script(type="text/ng-template" id="project-map")
-                button.directory-button(ng-click="dir.open = !dir.open") {{ dir.dirName }}
+                button.directory-button(class="index-button" ng-click="dir.open = !dir.open")
+                    i.fa(ng-class="{'fa-caret-right': !dir.open, 'fa-caret-down': dir.open}")
+                    | #{' '}{{ dir.dirName }}
                 ul(ng-if="dir.projects.length + dir.dirs.length > 0 ")
                     li(ng-if="dir.open" ng-repeat="project in dir.projects")
-                        button.project-button(ng-click="loadProject(project.link)") {{project.title}}
-                    li(ng-repeat="dir in dir.dirs" ng-include="'project-map'")
+                        button.project-button(class="index-button" ng-click="loadProject(project.link)")
+                            | {{project.title}}#{' '}
+                            i.fa(ng-class="{'fa-hand-o-left': project.link === loaded}")
+                    li(ng-show="dir.open")
+                        div(ng-repeat="dir in dir.dirs" ng-include="'project-map'")
             div#root(ng-repeat="dir in projectMap.dirs" ng-include="'project-map'")
         div.project-display
 

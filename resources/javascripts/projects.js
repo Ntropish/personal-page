@@ -7,7 +7,9 @@ $(document).ready(function(){
 angular.module('index', [])
     .controller('IndexCtrl', ['$scope', '$http', function ($scope, $http) {
 
+        $scope.loaded = '';
         $scope.loadProject = function(link) {
+            $scope.loaded = link;
             $('.project-display').load(link);
         };
 
