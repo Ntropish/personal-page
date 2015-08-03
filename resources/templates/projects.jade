@@ -2,23 +2,31 @@ extends layout
 block content
     div#content
         h1 Projects
-        p Click on a project title or image to view the end result.
-        section#projects
-            div.project
-                include ../project-templates/nightlife.jade
-            div.project
-                include ../project-templates/vote.jade
-            div.project
-                include ../project-templates/weather.jade
-            div.project
-                include ../project-templates/calculator.jade
-            div.project
-                include ../project-templates/tictactoe.jade
-            div.project
-                include ../project-templates/pomodoro.jade
+        p
+            | Over the past eight weeks I've made quite a bit of progress thanks to FreeCodeCamp
+            | and the awesome web development community. I've nearly completed the#{' '}
+            a(href="http://www.freecodecamp.com/map") FCC curriculum
+            | #{' '}and am starting to work on "real-world" projects such as this website.
+            | Check out the project directory and click on a project name to view one. You
+            | can view the source on GitHub or see it in action by clicking the project image.
+        div#index-app(ng-app="index" ng-controller="IndexCtrl as controller")
+            script(type="text/ng-template" id="project-map")
+                button.directory-button(class="index-button" ng-click="dir.open = !dir.open")
+                    i.fa(ng-class="{'fa-caret-right': !dir.open, 'fa-caret-down': dir.open}")
+                    | #{' '}{{ dir.dirName }}
+                ul(ng-if="dir.projects.length + dir.dirs.length > 0 ")
+                    li(ng-if="dir.open" ng-repeat="project in dir.projects")
+                        button.project-button(class="index-button" ng-click="loadProject(project.link)")
+                            | {{project.title}}#{' '}
+                            i.fa(ng-class="{'fa-hand-o-left': project.link === loaded}")
+                    li(ng-show="dir.open")
+                        div(ng-repeat="dir in dir.dirs" ng-include="'project-map'")
+            div#root(ng-repeat="dir in projectMap.dirs" ng-include="'project-map'")
+        div.project-display
+            p#project-display-initial-message Click a project name in the directory to load a project write-up
 
 block scripts
     script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js")
-    script(src="resources/uglyjs/projects.min.js")
+    script(src="resources/javascripts/projects.js")
 block styles
-    link(rel="stylesheet" href="resources/css/projects.min.css")
+    link(href="resources/css/projects.min.css" rel="stylesheet" )

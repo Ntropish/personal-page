@@ -8,15 +8,65 @@ $color3: rgba(92, 111, 104, 1)
 $color4: rgba(45, 45, 42, 1)
 $color5: rgba(248, 252, 253, 1)
 
+$color-light-grey: rgba(220, 220, 220, 1)
 $color-shadow: rgba(0, 0, 0, 1)
 
+@media screen and (min-width: 35em)
+  #intro
+    height: 20em
 
+  #my-title
+    width: 45%
+    margin-left: 1em
+    float: left
+
+  #social-links
+    width: 45%
+    margin-left: 1em
+
+  #picture-of-me
+    float: right
+    margin-right: 5%
+
+  #about
+    margin-left: auto
+    margin-right: auto
+
+  #technology
+    margin-left: auto
+    margin-right: auto
+
+@media screen and (min-width: 45em)
+  #my-title
+    margin-left: auto
+    margin-right: auto
+    float: none
+
+  #social-links
+    margin-left: auto
+    margin-right: auto
+    float: none
+
+  #picture-of-me
+    position: absolute
+    right: 0
+    top: 0
+    margin-right: 0
+    float: none
+
+  #technology-sections>.tech-section
+    width: 25%
+
+ul
+  list-style: none
+  padding-left: 1em
 
 #splash
   display: none
   
 #intro
-  width: 100%
+  border-bottom: solid 1px $color-light-grey
+  position: relative
   text-align: center
   &>p
     color: $color3
@@ -24,14 +74,23 @@ $color-shadow: rgba(0, 0, 0, 1)
 
 
 #picture-of-me
-  position: relative
-  display: inline-block
   width: 40%
-  top: 1em
-  margin-left: 30%
-  margin-right: 30%
+  max-width: 12em
 
 #about
   padding: 1em
+  max-width: 30em
 
+#technology
+  text-align: center
+
+#technology-sections
+  display: flex
+  flex-wrap: wrap
+
+.tech-section
+  width: 50%
+
+#social-links>a
+  font-size: 3em
 

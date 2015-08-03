@@ -1,6 +1,90 @@
-body
-  background-color: #f7fafa
+$color1: rgba(160, 180, 174, 1)
+$color2: rgba( 13,  31,  45, 1)
+$color3: rgba( 92, 111, 104, 1)
+$color4: rgba( 45,  45,  42, 1)
+$color5: rgba(247, 250, 250, 1)
+
+$color-shadow: rgba( 0, 0, 0, 1)
+$color-white: rgba( 255, 255, 255, 1)
+$color-light-grey: rgba(220, 220, 220, 1)
+
+@media screen and (min-width: 35em)
+  #content
+    &>h1
+      text-align: center
+    &>p
+      margin-left: auto
+      margin-right: auto
+  #index-app
+    margin-left: auto
+    margin-right: auto
+  .project-display
+    margin-left: auto
+    margin-right: auto
+    &>.project-title
+      text-align: center
+    &>.project-prompt
+      text-align: center
+    &>.project-image-link
+      display: block
+      margin-left: auto
+      margin-right: auto
+      &>.project-image
+        border: solid 1px $color-light-grey
+
+@media screen and (min-width: 75em)
+  #index-app
+    position: absolute
+    top: 8em
+    left: 2%
+
+button
+  width: 100%
+  text-align: left
+
+ul
+  list-style: none
+  padding-left: 1em
+
+.project-display
+  border-top: solid 1px $color-light-grey
+  min-height: 30em
+  max-width: 35em
+
+#project-display-initial-message
+  color: $color3
 
 .project-image
   width: 100%
   max-width: 25em
+
+#index-app
+  max-width: 20em
+
+.index-button
+  border: 0
+  border-radius: 1em
+
+  &:focus
+    outline: 0
+
+.directory-button
+  font-size: 1.1em
+  background-color: $color2
+  color: $color-white
+  &>.fa
+    color: $color-white
+
+
+.project-button
+  font-size: 1em
+  background-color: $color-white
+
+.project-image-link
+  width: 100%
+  max-width: 20em
+
+#content
+  position: relative
+  &>p
+    max-width: 35em

@@ -1,124 +1,78 @@
 {
-  "projects": [
+  "dirs": [
     {
-      "name": "Personal Website",
-      "link": "",
-      "prompt": "",
-      "image": "",
-      "source": "",
-      "summary": "",
-      "objectives": "",
-      "weaknesses": ""
-    },
-    {
-      "name": "Nightlife Management App",
-      "link": "http://obscure-meadow-6240.herokuapp.com/",
-      "prompt": "",
-      "image": "",
-      "source": "https://github.com/Ntropish/oak-smoke-nightlife",
-      "summary": "",
-      "objectives": "",
-      "weaknesses": ""
-    },
-    {
-      "name": "Voting App",
-      "link": "",
-      "prompt": "",
-      "image": "",
-      "source": "https://github.com/Ntropish/stale-vote",
-      "summary": [
-        "This app let's a user login to create and vote on polls. ",
-        "Any user can visit the page of a user with an account to view their polls ",
-        "but must login to vote or create their own."
+      "open": true,
+      "dirName": "Projects",
+      "projects": [
+
       ],
-      "objectives": [
-        "The primary objective of this project was to serve as an introduction to back-end development",
-        "<h4>Technology Learned</h4>",
-        "<ul>",
-        "<li><h5>Express</h5><p>This was my first time using Express, a web framework for Node.js. Like most things in javascript, ",
-        "Express is very open and unopinionated which exposes what is happening to its user at a very deep level. ",
-        "Even though this philosophy tends to cause steeper learning curves, I'm very happy that I worked through ",
-        "it and understand why Express is one of the most popular Node.js frameworks</p></li>",
-        "<li><h5>MongoDB</h5><p>In this project I used Mongoose along with MongoDB for my data storage . These two pieces ",
-        "of software made it extremely simple to create a schema and just use it. Other than ease of use, using ",
-        "these two caused me to become familiar with the error first callback design pattern and async ",
-        "programming in general.</p></li>",
-        "<li><h5>Authentication and Authorization</h5><p>User handling was done with Passport and Express-Sessions. ",
-        "It may have actually been easier to just roll my own authentication as Passport seemed to hide ",
-        "the inner workings of authentication. However, I'm writing this from the future after I have worked with ",
-        "it more and now know that it is really just an authentication time saver and allows for multiple ",
-        "authentication strategies without causing the mess that one would create on their own. Express-Sessions ",
-        "is just a middleware that stays out of the way while letting one access user data from any request, ",
-        "very useful.</p></li>"
-      ],
-      "weaknesses": [
-        "This app was structured very poorly and I really disliked working in it after realizing ",
-        "everything I had done wrong. It was my first time working with Jade templates and decided it ",
-        "might be a good idea to have route handlers render out html with poll and user data already in them ",
-        "using my new templating powers. This caused problems when I wanted to make the client side dynamic ",
-        "and resulted in much DOM wrangling. I finished this one up quickly and did almost no styling on it, ",
-        "wanting to get away from the mess hoping to use my new Express skills for good in the future."
+      "dirs": [
+        {
+          "open": true,
+          "dirName": "Beginner Projects",
+          "projects": [
+            {
+              "title": "Personal Website",
+              "link": "resources/html/projects/personal.html"
+            }
+          ],
+          "dirs": [
+            {
+              "open": true,
+              "dirName": "FreeCodeCamp",
+              "projects": [],
+              "dirs": [
+                {
+                  "open": true,
+                  "dirName": "Full-Stack",
+                  "projects": [
+                    {
+                      "title": "Nightlife Coordination App",
+                      "link": "resources/html/projects/nightlife.html"
+                    },
+                    {
+                      "title": "Voting App",
+                      "link": "resources/html/projects/vote.html"
+                    }
+                  ],
+                  "dirs": {}
+                },
+                {
+                  "open": true,
+                  "dirName": "Front-End",
+                  "projects": [
+                    {
+                      "title": "TicTacToe Game",
+                      "link": "resources/html/projects/tictactoe.html"
+                    },
+                    {
+                      "title": "JavaScript Calculator",
+                      "link": "resources/html/projects/calculator.html"
+                    },
+                    {
+                      "title": "Pomodoro Clock",
+                      "link": "resources/html/projects/pomodoro.html"
+                    },
+                    {
+                      "title": "Wikipedia Search",
+                      "link": "resources/html/projects/wiki-search.html"
+                    },
+                    {
+                      "title": "FreeCodeCamp News Scraper",
+                      "link": "resources/html/projects/FCCnews.html"
+                    },
+                    {
+                      "title": "Local Weather Page",
+                      "link": "resources/html/projects/weather.html"
+                    }
+                  ],
+                  "dirs": []
+                }
+              ]
+            }
+          ]
+        }
       ]
-    },
-    {
-      "name": "Weather Lookup Page",
-      "link": "",
-      "prompt": "",
-      "image": "",
-      "source": "",
-      "summary": "",
-      "objectives": "",
-      "weaknesses": ""
-    },
-    {
-      "name": "Tictactoe Game",
-      "link": "",
-      "prompt": "",
-      "image": "",
-      "source": "",
-      "summary": "",
-      "objectives": "",
-      "weaknesses": ""
-    },
-    {
-      "name": "Calculator Page",
-      "link": "http://ntropish.github.io/Calculator/",
-      "prompt": "",
-      "image": "",
-      "source": "https://github.com/Ntropish/Calculator",
-      "summary": "",
-      "objectives": "",
-      "weaknesses": ""
-    },
-    {
-      "name": "Pomodoro Clock",
-      "link": "",
-      "prompt": "",
-      "image": "",
-      "source": "",
-      "summary": "",
-      "objectives": "",
-      "weaknesses": ""
-    },
-    {
-      "name": "Wikipedia Search",
-      "link": "",
-      "prompt": "",
-      "image": "",
-      "source": "",
-      "summary": "",
-      "objectives": "",
-      "weaknesses": ""
-    },
-    {
-      "name": "Dynamic Quiz Page",
-      "link": "",
-      "prompt": "",
-      "image": "",
-      "source": "https://github.com/Ntropish/DynamicQuiz",
-      "summary": "",
-      "objectives": "",
-      "weaknesses": ""
     }
   ]
 }
