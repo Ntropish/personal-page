@@ -41,6 +41,7 @@ ul {
   max-width: 35em; }
 
 #project-display-initial-message {
+  text-align: center;
   color: #5c6f68; }
 
 .project-image {
