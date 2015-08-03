@@ -37,7 +37,11 @@ ul {
 
 .project-display {
   border-top: solid 1px gainsboro;
+  min-height: 30em;
   max-width: 35em; }
+
+#project-display-initial-message {
+  color: #5c6f68; }
 
 .project-image {
   width: 100%;

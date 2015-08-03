@@ -34,8 +34,11 @@
           </script>
           <div id="root" ng-repeat="dir in projectMap.dirs" ng-include="'project-map'"></div>
         </div>
-        <div class="project-display"></div>
+        <div class="project-display">
+          <p id="project-display-initial-message">Click a project name in the directory to load a project write-up</p>
+        </div>
       </div>
+      <section id="footer"></section>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
