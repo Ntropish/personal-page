@@ -14,12 +14,6 @@
       </section>
       <div id="content">
         <h1>Projects</h1>
-        <p>
-          Over the past eight weeks I've made quite a bit of progress thanks to FreeCodeCamp
-          and the awesome web development community. I've nearly completed the <a href="http://www.freecodecamp.com/map">FCC curriculum</a> and am starting to work on "real-world" projects such as this website.
-          Check out the project directory and click on a project name to view one. You
-          can view the source on GitHub or see it in action by clicking the project image.
-        </p>
         <div id="index-app" ng-app="index" ng-controller="IndexCtrl as controller">
           <script type="text/ng-template" id="project-map">
             <button ng-click="dir.open = !dir.open" class="directory-button index-button"><i ng-class="{'fa-caret-right': !dir.open, 'fa-caret-down': dir.open}" class="fa"></i> {{ dir.dirName }}</button>

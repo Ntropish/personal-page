@@ -1,14 +1,14 @@
 
 <h1 class="project-title"><a href="https://crosswire.xyz/" class="project-link">crosswire</a></h1>
 <h4 class="project-prompt">
-  I needed an app to listen to music with synced up with friends
-  and so I made it!
+  I made this app so people can listen to synced up music together
+  over the internet.
 </h4><a href="https://crosswire.xyz/" class="project-image-link"><img src="resources/img/project-images/crosswire.jpg" class="project-image"/></a><a href="https://github.com/Ntropish/crosswire" class="source-link">
   <h3>View the source here.</h3></a>
 <p class="project-summary">
   With this app users can join playlists made by other users 
   to listen to music together. Everyone adds SoundCloud links
-  and controls the room together while crosswire uses socket.io
+  and controls the room together while crosswire uses websockets
   to keep everybody in sync.
 </p>
 <div class="objectives">
@@ -25,10 +25,10 @@
   <p>
      
     I had to get pretty deep into socket.io to make the app work and I'm really
-    looking forward to using web sockets for more stuff in the future \(I
-    have to make a game now). I was disappointed that the engine was missing
+    looking forward to using web sockets for more stuff in the future (I've
+    got to make a game now). I was disappointed that the engine was missing
     some basic features, wildcard events and socket lists for rooms, but 
-    digging in and adding wildcard events so I could have JWT middlware 
+    digging in and adding wildcard events so I could have JWT middleware 
     was actually pretty fun. 
   </p>
   <h4>Testing</h4>
@@ -37,7 +37,7 @@
     In the first iteration of this app I spent several days learning to do 
     tests properly. Mocha and should, the 'default' packages people
     seem to use when they want to test, really didn't fit what I wanted to 
-    do and so with the help of some people on IRC, espcially ljharb, I ended
+    do and so with the help of some people on IRC, especially ljharb, I ended
     up using tape and supertest with promises. This solution was awesome
     because combining Promise.map and Array.reduce make it easy to build 
     whatever async control flow one needs.
@@ -67,16 +67,16 @@
     nginx, getting a cert signed, and using PM2 to keep my app up, I got 
     it all done in under half a day. Much relief. I should also mention 
     that I modified my app so that no modification is required between 
-    development and deployment in this part. That's probably nothing
+    development and deployment. That's probably nothing
     special to someone more experienced, but to me it was very satisfying 
     to be able to pull from github, restart the app process, and have changes 
-    go live immediatlely.
+    go live immediately.
   </p>
 </div>
 <div class="weaknesses">
   <h2>Weaknesses</h2>
   <p>
-    One of the biggest weaknesses of this app is the large size of the files.
+    One of the weaknesses of this app is the large size of the files.
     The client javascript is all in one single massive file. It is organized
     pretty well and could easily be split apart, but I didn't feel I had time 
     to slow down and fix the problems that might cause. In the end I probably
@@ -90,13 +90,21 @@
     SoundCloud widget emits events on any modification, even if that 
     modification came from using one of its methods to update its state.
     This means you can't differentiate between primary user events and
-    those that come from your server in your event handlers. My solution, to 
+    those that come from your server. My solution, to 
     prevent looping updates, was to check if the widget needed the update 
     before applying it. It seemed like a pretty good solution, but it just
     isn't. It actually gives the widget some control of the model and causes a
     mess of bugs/special cases that one has to catch. I think I'll have to
-    take some philosophy lessons from flux.js and try to expand my state
+    take some philosophy lessons from flux and try to expand my state
     management skills from there because this is a big weakness for me 
     right now.
+  </p>
+  <p>
+    The last thing I should talk about is testing. In the second iteration
+    of crosswire I am using socket.io over express almost exclusively. I
+    wasn't sure how to go about writing tests for this technology that's 
+    new to me and so much more dynamic than my previous experiences. But now
+    that development has settled down I'll have to go back and write some
+    or I'll surely accidentally break something and deploy it without knowing it.
   </p>
 </div>
