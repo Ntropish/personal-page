@@ -3,8 +3,10 @@
     {
       "open": true,
       "dirName": "Projects",
-      "projects": [
-
+      "projects": [ {
+        "title": "Crosswire",
+        "link": "resources/html/projects/crosswire.html"
+      }
       ],
       "dirs": [
         {

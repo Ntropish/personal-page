@@ -1,0 +1,88 @@
+h1.project-title
+  a.project-link(href="https://crosswire.xyz/") crosswire
+h4.project-prompt
+  | I needed an app to listen to music with synced up with friends
+  | and so I made it!
+a.project-image-link(href="https://crosswire.xyz/")
+  img.project-image(src="resources/img/project-images/crosswire.jpg")
+a.source-link(href="https://github.com/Ntropish/crosswire")
+  h3 View the source here.
+p.project-summary
+  | With this app users can join playlists made by other users 
+  | to listen to music together. Everyone adds SoundCloud links
+  | and controls the room together while crosswire uses socket.io
+  | to keep everybody in sync.
+div.objectives
+  h2 Learning Objectives and Accomplishments
+  p 
+    | The goal of this project was to build something complete and useful
+    | and to put it out in the wild with proper security to get an 
+    | understanding of what it takes to make a product. I picked up so 
+    | much JavaScript knowledge and got something useful out of it.
+  h3 New Technology
+  h4 Socket.io
+  p 
+    | I had to get pretty deep into socket.io to make the app work and I'm really
+    | looking forward to using web sockets for more stuff in the future \(I
+    | have to make a game now). I was disappointed that the engine was missing
+    | some basic features, wildcard events and socket lists for rooms, but 
+    | digging in and adding wildcard events so I could have JWT middlware 
+    | was actually pretty fun. 
+  h4 Testing
+  p 
+    | In the first iteration of this app I spent several days learning to do 
+    | tests properly. Mocha and should, the 'default' packages people
+    | seem to use when they want to test, really didn't fit what I wanted to 
+    | do and so with the help of some people on IRC, espcially ljharb, I ended
+    | up using tape and supertest with promises. This solution was awesome
+    | because combining Promise.map and Array.reduce make it easy to build 
+    | whatever async control flow one needs.
+  h4 Promises
+  p
+    | Learning Promises for testing also ended up being extremely necessary for 
+    | the socket.io event handlers. Most of them had four or five callbacks
+    | for database access, authentication checks, or api calls. Thanks to my new
+    | promise skills I didn't have to build mountain ranges of nested callbacks!
+  h4 Security
+  p
+    | Because I was making something for the real world where people use the 
+    | same password for all of their accounts I knew I had to use SSL. I 
+    | spent a while figuring out how to make keys and self sign certificates
+    | to use in my app. I would later learn that I would just use a reverse 
+    | proxy to handle that stuff and build my app as a normal http server.
+    | It still helped to have the knowledge for when I did my first deployment
+    | though.
+  h4 Deployment
+  p
+    | I used DigitalOcean for deployment with an Ubuntu VPS. This was a great
+    | experience thanks to their complete documentation and tutorials for every 
+    | scenario an admin might have. Even though it was my first time using
+    | nginx, getting a cert signed, and using PM2 to keep my app up, I got 
+    | it all done in under half a day. Much relief. I should also mention 
+    | that I modified my app so that no modification is required between 
+    | development and deployment in this part. That's probably nothing
+    | special to someone more experienced, but to me it was very satisfying 
+    | to be able to pull from github, restart the app process, and have changes 
+    | go live immediatlely.
+div.weaknesses
+  h2 Weaknesses
+  p One of the biggest weaknesses of this app is the large size of the files.
+    | The client javascript is all in one single massive file. It is organized
+    | pretty well and could easily be split apart, but I didn't feel I had time 
+    | to slow down and fix the problems that might cause. In the end I probably
+    | spent more time scrolling and searching than I would have refactoring and
+    | my project is a little more ugly because of it.
+  p I also found that my ability to sync states between clients isn't that
+    | great. I did my best to control the state server side and propagate
+    | changes to the client from the model kept on the server. But, the 
+    | SoundCloud widget emits events on any modification, even if that 
+    | modification came from using one of its methods to update its state.
+    | This means you can't differentiate between primary user events and
+    | those that come from your server in your event handlers. My solution, to 
+    | prevent looping updates, was to check if the widget needed the update 
+    | before applying it. It seemed like a pretty good solution, but it just
+    | isn't. It actually gives the widget some control of the model and causes a
+    | mess of bugs/special cases that one has to catch. I think I'll have to
+    | take some philosophy lessons from flux.js and try to expand my state
+    | management skills from there because this is a big weakness for me 
+    | right now.
