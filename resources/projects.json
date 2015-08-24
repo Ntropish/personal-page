@@ -3,12 +3,14 @@
     {
       "open": true,
       "dirName": "Projects",
-      "projects": [
-
+      "projects": [ {
+        "title": "Crosswire",
+        "link": "resources/html/projects/crosswire.html"
+      }
       ],
       "dirs": [
         {
-          "open": true,
+          "open": false,
           "dirName": "Beginner Projects",
           "projects": [
             {
